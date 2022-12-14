@@ -42,7 +42,7 @@ Output
 ```javascript
 const nfl = require("nfl-stats");
 
-let score = await nfl.getGameScore('45667845');
+let score = await nfl.getGameScore(${gameID});
 ```
 
 Output
