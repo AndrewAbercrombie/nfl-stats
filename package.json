@@ -1,0 +1,25 @@
+{
+  "name": "nfl-stats",
+  "version": "1.0.0",
+  "description": "Check mutiple stat type for anything NFL related.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewAbercrombie/nfl-stats.git"
+  },
+  "keywords": [
+    "NFL"
+  ],
+  "author": "Andrew Abercrombie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewAbercrombie/nfl-stats/issues"
+  },
+  "homepage": "https://github.com/AndrewAbercrombie/nfl-stats#readme",
+  "dependencies": {
+    "axios": "^1.2.1"
+  }
+}
