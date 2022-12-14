@@ -17,8 +17,6 @@ exports.getWeeklyGames = async function() {
   return retVal
 }
 
-
-
 exports.getGameScore = async function(gameId) {
   let response = await axios.get('https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard');
   let games = response.data.events;
@@ -47,11 +45,17 @@ exports.getGameScore = async function(gameId) {
     return scores;
 
   } else {
-    
     scores.push({
       'error': "Invalid Game ID",
     })
 
-    return scores
+    return scores;
   }
+}
+
+
+exports.getTeamLogo = async function(teamID) {
+  let response = await axios.get(`http://sports.core.api.espn.com/v2/sports/football/leagues/nfl/seasons/2022/teams/${teamID}?lang=en&region=us`);
+  let logo = response.data.logos[0].href;
+  return {'team': response.data.displayName, 'logo-url': logo}
 }
