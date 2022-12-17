@@ -1,6 +1,6 @@
 {
   "name": "nfl-stats",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Check mutiple stat type for anything NFL related.",
   "main": "index.js",
   "scripts": {

@@ -75,6 +75,21 @@ Output
 }
 ```
 
+### Get Current Week
+```javascript
+const nfl = require("nfl-stats");
+
+let week = await nfl.getCurrentWeek();
+```
+
+Output
+
+```javascript
+[{
+    team: (STRING , week number),
+}
+```
+
 ## Usuful IDs
 <details>
   <summary>Team IDs</summary>

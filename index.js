@@ -59,3 +59,8 @@ exports.getTeamLogo = async function(teamID) {
   let logo = response.data.logos[0].href;
   return {'team': response.data.displayName, 'logo-url': logo}
 }
+
+exports.getCurrentWeek = async function() {
+  let response =  await axios.get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard`);
+  return ({'week': response.data.week.number});
+}
