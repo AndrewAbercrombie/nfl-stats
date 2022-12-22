@@ -94,7 +94,7 @@ Output
 ```javascript
 const nfl = require("nfl-stats");
 
- let id = await nfl.getAthleteId("George Kittle");
+let id = await nfl.getAthleteId("George Kittle");
 ```
 
 Output
