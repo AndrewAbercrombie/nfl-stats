@@ -60,6 +60,30 @@ exports.getTeamLogo = async function(teamID) {
   return {'team': response.data.displayName, 'logo-url': logo}
 }
 
+
+exports.getAthleteId = async function(name) {
+  const response = await axios.get('https://sports.core.api.espn.com/v3/sports/football/nfl/athletes?limit=18000');
+
+  let retVal = {}
+
+  for (i = 0; i < response.data.items.length ; i++) {
+    if (response.data.items[i].displayName == name) {
+      retVal = {"id":  response.data.items[i].id};
+      break;
+    }
+  }
+
+  if (retVal != {}) {
+    return retVal
+  } else return {'error': "Player not found"};
+}
+
+
+exports.getAthleteHeadshotImage = async function(athleteID) {
+  let response = await axios.get(`https://site.web.api.espn.com/apis/common/v3/sports/football/nfl/athletes/${athleteID}`)
+  return {"headshotURL": response.data.athlete.headshot.href};
+}
+
 exports.getCurrentWeek = async function() {
   let response =  await axios.get(`https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard`);
   return ({'week': response.data.week.number});
