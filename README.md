@@ -85,8 +85,37 @@ let week = await nfl.getCurrentWeek();
 Output
 
 ```javascript
-[{
+{
     team: (STRING , week number),
+}
+```
+
+### Get Player ID From Name
+```javascript
+const nfl = require("nfl-stats");
+
+ let id = await nfl.getAthleteId("George Kittle");
+```
+
+Output
+
+```javascript
+{
+    id: (STRING , player id),
+}
+```
+
+### Get Player Photo URL
+```javascript
+const nfl = require("nfl-stats");
+let photoUrl = await nfl.getAthleteHeadshotImage(${PlayerID});
+```
+
+Output
+
+```javascript
+{
+    headshotURL: (STRING , headshot URL),
 }
 ```
 
