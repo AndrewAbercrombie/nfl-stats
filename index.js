@@ -31,7 +31,6 @@ exports.getGameScore = async function(gameId) {
   }
 
   if (gameObj) {
-    console.log('sdf');
     scores.push({
       'team': gameObj.competitions[0].competitors[0].team.displayName,
       'score': gameObj.competitions[0].competitors[0].score,
